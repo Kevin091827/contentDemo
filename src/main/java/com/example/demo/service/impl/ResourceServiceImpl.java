@@ -36,22 +36,18 @@ public class ResourceServiceImpl implements ResourceService {
     @Override
     public AjaxResult uploadResource(InputStream fileInputStream,
                                      String type,
-                                     String author,
                                      String title,
                                      String text,
                                      String resourceType,
                                      String userId) {
         try {
             String url = qiniuService.uploadFile(fileInputStream);
+            System.out.println(url);
             Resource resource = new Resource();
-            resource.setAuthor(author);
-            if (type == "1") {
-                resource.setImgUrl("");
-                resource.setContent(url);
-            } else if (type == "2") {
-                resource.setImgUrl(url);
-                resource.setContent(text);
-            }
+            resource.setUserId(Long.parseLong(userId));
+            // 1：视频。2：文章
+            resource.setImgUrl(url);
+            resource.setContent(text);
             resource.setTitle(title);
             resource.setResourceType(Integer.parseInt(resourceType));
             resource.setType(Integer.parseInt(type));

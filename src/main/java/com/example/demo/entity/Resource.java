@@ -21,7 +21,7 @@ public class Resource {
     // title
     private String title;
     // 作者
-    private String author;
+    private long userId;
     // 审核状态，1：审核，2：启用，3：禁用
     private int statue;
     // 缩图

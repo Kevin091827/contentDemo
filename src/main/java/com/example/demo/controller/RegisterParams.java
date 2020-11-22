@@ -9,6 +9,7 @@ package com.example.demo.controller;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.lang.Nullable;
 import org.springframework.web.multipart.MultipartFile;
 
 @Data
@@ -28,5 +29,6 @@ public class RegisterParams {
     private int type;
 
     @ApiModelProperty("教师认证时传的图片")
+    @Nullable
     private MultipartFile teacherImage;
 }

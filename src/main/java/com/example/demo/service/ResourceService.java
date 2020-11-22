@@ -16,7 +16,6 @@ public interface ResourceService {
 
     AjaxResult uploadResource(InputStream fileInputStream,
                               String type,
-                              String author,
                               String title,
                               String text,
                               String resourceType,

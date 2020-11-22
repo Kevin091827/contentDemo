@@ -35,7 +35,7 @@ public class UserController {
      */
     @PostMapping("/register")
     @ApiOperation("注册接口")
-    public AjaxResult register(@RequestBody RegisterParams registerParams) {
+    public AjaxResult register(RegisterParams registerParams) {
         if (registerParams == null) {
             log.error("[op:register] -> 参数有误 " + JSONObject.toJSONString(registerParams));
             return new AjaxResult().error("参数有误");

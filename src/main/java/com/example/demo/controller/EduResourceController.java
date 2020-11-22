@@ -29,7 +29,6 @@ public class EduResourceController {
      * @param file
      * @param text
      * @param type
-     * @param author
      * @param resourceType
      * @param title
      * @return
@@ -40,12 +39,11 @@ public class EduResourceController {
             @ApiParam("图片和视频时要传，文章不用传") @RequestParam("file") @Nullable MultipartFile file,
             @ApiParam("文章要传，图片和视频不用传") @RequestParam("text")@Nullable String text,
             @ApiParam("1：视频。2：文章")@RequestParam("type") String type,
-            @ApiParam("作者名")@RequestParam("author") String author,
             @ApiParam("资源类型，1：育儿，2：传统，3：艺术")@RequestParam("resourceType")String resourceType,
             @ApiParam("标题")@RequestParam("title")String title,
             @ApiParam("用户id")@RequestParam("userId")String userId) {
         try {
-            return resourceService.uploadResource(file.getInputStream(),type,author,title,text,resourceType,userId);
+            return resourceService.uploadResource(file.getInputStream(),type,title,text,resourceType,userId);
         } catch (Exception e) {
             e.printStackTrace();
         }

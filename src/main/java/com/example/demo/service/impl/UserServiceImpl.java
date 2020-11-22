@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService {
             check.setUrl(url);
             check.setType(0);
             check.setUserName(registerParams.getUserName());
-            checkMapper.addCheck(check);
+            //checkMapper.addCheck(check);
             return new AjaxResult().ok("提交成功");
         }catch (Exception e){
             e.printStackTrace();
